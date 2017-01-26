@@ -100,7 +100,9 @@ public class TTBoard extends javax.swing.JFrame {
             restart_btn.setEnabled(true);
         } else {
             isplayer1 = !isplayer1;
-            System.out.println(isplayer1);
+            if(debugMode) {
+                System.out.println(isplayer1);
+            }
             currentPlayer.setText(isplayer1 ? "Player 1" : "Player 2");
         }
         
