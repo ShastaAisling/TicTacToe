@@ -22,7 +22,9 @@ public class TTBoard extends javax.swing.JFrame {
     ArrayList<Integer> player2 = new ArrayList<>();
     boolean isplayer1 = true;
     ArrayList possibilities = initialize();
-    
+
+    boolean debugMode = false;
+
     private ArrayList initialize(){
        
         // Grid:
@@ -71,11 +73,15 @@ public class TTBoard extends javax.swing.JFrame {
     private void btn(int btn_num){
         if (isplayer1){
             player1.add(btn_num);
-            System.out.println(player1);
+            if(debugMode) {
+                System.out.println(player1);
+            }
             win_check(player1, possibilities);
         } else {
             player2.add(btn_num);
-            System.out.println(player2);
+            if(debugMode) {
+                System.out.println(player2);
+            }
             win_check(player2, possibilities);
         }
     }
